@@ -3,76 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vinoth Kumar — Data Engineering, Data Science, Machine learning Engineer and AI/ML Engineering">
-  <title>Vinoth Kumar | AI|ML Engineer</title>
+  <meta name="description" content="Vinoth Kumar — Data Engineering, Data Science and AI Engineering">
+  <title>Vinoth Kumar | Data & AI Engineer</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 850px;
-      margin: 60px auto;
-      padding: 0 24px;
-      line-height: 1.7;
-      color: #243047;
+    :root {
+      --bg: #0b1220;
+      --surface: #131f33;
+      --text: #edf4ff;
+      --muted: #a8b8cf;
+      --accent: #69d7e8;
+      --border: rgba(255,255,255,.11);
     }
-    h1 { color: #123c69; }
-    h2 { margin-top: 38px; color: #193b62; }
-    a { color: #1264a3; }
-    li { margin-bottom: 10px; }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background:
+        radial-gradient(circle at 82% 8%, rgba(49,119,171,.28), transparent 30%),
+        radial-gradient(circle at 10% 38%, rgba(49,174,177,.12), transparent 25%),
+        var(--bg);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    .container { width: min(1080px, 90%); margin: auto; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
+    }
+
+    .logo { font-weight: 800; font-size: 1.15rem; letter-spacing: .04em; }
+    .logo span, .eyebrow, .highlight { color: var(--accent); }
+
+    nav { display: flex; gap: 25px; color: var(--muted); font-size: .92rem; }
+
+    .hero { padding: 110px 0 95px; max-width: 820px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: .78rem; font-weight: 700; }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: 1.08;
+      letter-spacing: -.05em;
+      margin: 17px 0 22px;
+    }
+
+    .hero p { color: var(--muted); font-size: 1.13rem; max-width: 690px; }
+
+    .buttons { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 31px; }
+    .button {
+      display: inline-block;
+      padding: 12px 19px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-weight: 650;
+    }
+    .button.primary { color: #071524; background: var(--accent); border-color: var(--accent); }
+    .button.primary:hover { background: #9beaf3; color: #071524; }
+    .button.secondary:hover { border-color: var(--accent); }
+
+    section { padding: 47px 0; }
+    h2 { font-size: 1.8rem; letter-spacing: -.03em; margin: 0 0 12px; }
+    .intro { color: var(--muted); max-width: 760px; margin-bottom: 27px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .card {
+      padding: 25px;
+      background: rgba(19,31,51,.83);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      transition: transform .2s, border-color .2s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(105,215,232,.55); }
+    .card h3 { margin: 0 0 10px; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .tag { color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .08em; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skills span {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: #d7e6f6;
+      font-size: .9rem;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 28px 0 38px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    @media (max-width: 760px) {
+      header { align-items: flex-start; gap: 18px; flex-direction: column; }
+      nav { gap: 16px; flex-wrap: wrap; }
+      .hero { padding: 75px 0 50px; }
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
+
 <body>
-  <h1>Hi, I'm Vinoth Kumar Ulaganathan.</h1>
-  <p><strong>Lead Engineer – AI | Data Engineer | Data Science & AI/ML</strong></p>
-  <p>
-    I design data pipelines and build practical AI applications that
-    turn complex information into reliable, useful experiences.
-  </p>
+  <div class="container">
+    <header>
+      <a class="logo" href="#">VINOTH<span>.</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <h2>About me</h2>
-  <p>
-    I'm an AI engineer with a background in analytics and more than
-    10 years of professional experience. My work spans data engineering,
-    machine learning, LLM applications, backend APIs, and observability.
-    I enjoy taking an idea from raw data through to a working product.
-  </p>
+    <main>
+      <div class="hero">
+        <div class="eyebrow">Data · Engineering · Artificial Intelligence</div>
+        <h1>Building useful things<br>with <span class="highlight">data and AI.</span></h1>
+        <p>
+          Hi, I'm Vinoth Kumar, a Lead Engineer – AI based in Chennai.
+          I work across data engineering, analytics, and AI applications,
+          from reliable data pipelines to production LLM systems.
+        </p>
+        <div class="buttons">
+          <a class="button primary" href="#work">Explore my work →</a>
+          <a class="button secondary" href="#contact">Connect with me</a>
+        </div>
+      </div>
 
-  <h2>What I work on</h2>
-  <ul>
-    <li><strong>AI engineering:</strong> LLM orchestration, tool calling, prompt design, evaluation, and production debugging.</li>
-    <li><strong>Data engineering:</strong> ETL pipelines, PySpark, SQL,AWS, Azure Databricks, Azure Data Factory, and Delta Lake.</li>
-    <li><strong>Data science:</strong> forecasting, anomaly detection, exploratory analysis, and model development.</li>
-    <li><strong>Backend systems:</strong> FastAPI, Python, PostgreSQL, Redis, and cloud integrations.</li>
-  </ul>
+      <section id="about">
+        <h2>About me</h2>
+        <p class="intro">
+          I bring over 10 years of professional experience and a hands-on
+          focus on building with Python, SQL, cloud data platforms, and AI.
+          I enjoy connecting data, engineering, and product thinking to solve
+          real problems.
+        </p>
+      </section>
 
-  <h2>Featured work</h2>
-  <ul>
-    <li>
-      <strong>Enterprise AI chatbot engineering:</strong>
-      Improved request progress, clarification flows, reliability, and
-      observability in a multi-service LLM application.
-    </li>
-    <li>
-      <strong>ARQ prompt engineering demo:</strong>
-      Built an interactive comparison of direct prompting and structured
-      decision checks using FastAPI and an LLM.
-    </li>
-    <li>
-      <strong>Data pipeline and analytics projects:</strong>
-      Built data processing workflows with PySpark and SQL and explored
-      forecasting and anomaly detection use cases.
-    </li>
-  </ul>
+      <section id="work">
+        <h2>Featured work</h2>
+        <p class="intro">A selection of the systems and ideas I've worked on.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="tag">AI ENGINEERING</div>
+            <h3>Enterprise AI chatbot</h3>
+            <p>Worked on LLM orchestration, clarification flows, request progress, reliability, and observability across backend services.</p>
+          </article>
+          <article class="card">
+            <div class="tag">PROMPT ENGINEERING</div>
+            <h3>ARQ interactive demo</h3>
+            <p>Built a FastAPI demo comparing direct prompting with structured decision checks and interactive scenario inputs.</p>
+          </article>
+          <article class="card">
+            <div class="tag">DATA ENGINEERING</div>
+            <h3>Data pipelines & analytics</h3>
+            <p>Developed data workflows with PySpark and SQL and explored forecasting and anomaly detection use cases.</p>
+          </article>
+        </div>
+      </section>
 
-  <h2>Core tools</h2>
-  <p>
-    Python · SQL · PySpark · Azure Databricks · Azure Data Factory ·
-    FastAPI · PostgreSQL · Redis · AWS Bedrock · Docker · Git
-  </p>
+      <section id="skills">
+        <h2>Tools & technologies</h2>
+        <p class="intro">Technologies I use across data and AI projects.</p>
+        <div class="skills">
+          <span>Python</span><span>SQL</span><span>PySpark</span>
+          <span>Azure Databricks</span><span>Azure Data Factory</span>
+          <span>FastAPI</span><span>PostgreSQL</span><span>Redis</span>
+          <span>AWS Bedrock</span><span>Docker</span><span>Git</span>
+        </div>
+      </section>
 
-  <h2>Connect</h2>
-  <p>
-    <a href="https://github.com/codeandcurves">GitHub</a> ·
-    <a href="YOUR-LINKEDIN-URL">LinkedIn</a>
-  </p>
+      <section id="contact">
+        <h2>Let's connect</h2>
+        <p class="intro">Interested in data engineering or AI applications? Find me here.</p>
+        <div class="buttons">
+          <a class="button primary" href="https://github.com/codeandcurves" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a class="button secondary" href="YOUR-LINKEDIN-URL" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 Vinoth Kumar · Built with data, curiosity, and code.</footer>
+  </div>
 </body>
 </html>
